@@ -29,7 +29,7 @@ class Map():
                 self.dict_genes[i, j] = 2
 
         # Matriz que describe las fronteras de cada celda en binario.
-        '''
+        
         self.grid = np.array([
             [9,  5, 3, 9, 5, 3, 9, 3, 9, 3],
             [10, 0, 12, 2, 0, 8, 0, 2, 8, 6],
@@ -41,7 +41,8 @@ class Map():
             [9, 4, 2, 8, 5, 2, 0, 0, 8, 2],
             [10, 0, 8, 2, 0, 8, 3, 0, 8, 2],
             [12, 5, 6, 12, 5, 6, 12, 5, 6, 12]
-        ])'''
+        ])
+        '''
         self.grid = np.array([
                 [9,  3,  9,  5,  5,  5,  5,  5,  5,  3 ],
                 [10, 12, 6,  9,  1,  5,  5,  3,  9,  6 ],
@@ -53,7 +54,7 @@ class Map():
                 [8,  5,  6,  10, 10, 9,  3,  11, 10, 10],
                 [10, 9,  3,  10, 12, 6,  12, 2,  10, 10],
                 [12, 6,  12, 4,  5,  5,  5,  6,  12, 6 ]
-            ])
+            ])'''
         # Matriz de fondo para estética del tablero.
         self.back = np.zeros([10, 10])
         self.back[::2, ::2] = 1
@@ -238,7 +239,7 @@ class Camino():
                 direction = (direction + 1) % 4  # Prueba otra dirección
 
             path.append([row, col])
-            if [row, col] == [4, 10]:  # fin del laberinto
+            if [row, col] == [9, 10]:  # fin del laberinto
                 break
 
         self.path, self.wall_count, self.u_turn_count = np.array(path), wall_count, u_turn_count
